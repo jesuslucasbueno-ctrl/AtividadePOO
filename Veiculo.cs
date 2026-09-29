@@ -1,20 +1,23 @@
-using System.Diagnostics.Contracts;
-
 namespace AtividadePOO;
 
-public abstract class Carro
+public abstract class Veiculo
 {
-    public string Modelo { get; set; }
-    public int Ano { get; set; }
-    
     protected Veiculo(string modelo, int ano)
     {
+        Modelo = modelo;
+        Ano = ano;
+    }
 
-    Modelo = modelo;
-    Ano = ano;
-}
+    public string Modelo { get; private set; }
+    public int Ano { get; private set; }
 
     public void Ligar()
     {
-        
+        Console.WriteLine($"{Modelo} está Ligado!");
     }
+
+    public virtual void Acelerar()
+    {
+        Console.WriteLine($"{Modelo} està Acelerado!");
+    }
+}
